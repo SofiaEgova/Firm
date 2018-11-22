@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Введите имя">
+        <input type="text" name="text" placeholder="Введите должность">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+</body>
+</html>
