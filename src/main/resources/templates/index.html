@@ -1,18 +1,42 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Главная</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="../public/css/styles.css">
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+<!--<p th:text="'Hello, ' + ${name} + '!'" />-->
 
-<div>
+<!--<div>-->
+    <!--<form method="post">-->
+        <!--<input type="text" name="text" placeholder="Введите имя">-->
+        <!--<input type="text" name="text" placeholder="Введите должность">-->
+        <!--<button type="submit">Добавить</button>-->
+    <!--</form>-->
+<!--</div>-->
+<div id="header">
+</div>
+<ul>
+    <li><a href="./index">Главная</a></li>
+    <li><a href="./client">Клиенты</a></li>
+    <li><a href="./contract">Договоры</a></li>
+    <li><a href="./jobType">Типы работ</a></li>
+    <li><a href="./order">Заказы</a></li>
+    <li><a href="./worker">Сотрудники</a></li>
+</ul>
+<div id="main">
     <form method="post">
-        <input type="text" name="text" placeholder="Введите имя">
-        <input type="text" name="text" placeholder="Введите должность">
-        <button type="submit">Добавить</button>
+        <br>
+        <textarea type="text" placeholder="Введите имя" name="text" cols="100" rows="10" ></textarea> <br>
+        <input type="text" name="sender" placeholder="Напишите телефон">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <button type="submit">Отправить</button>
     </form>
 </div>
+<div id="footer">
+
+</div>
+
 </body>
 </html>
