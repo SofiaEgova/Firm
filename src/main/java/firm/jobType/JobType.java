@@ -6,11 +6,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "jobTypes")
+@Table(name = "job_types")
 public class JobType extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
 
     private String name;
 
@@ -22,10 +19,6 @@ public class JobType extends BaseEntity {
     public JobType(String name, Integer cost) {
         this.name = name;
         this.cost = cost;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public String getName() {

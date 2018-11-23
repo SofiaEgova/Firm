@@ -10,9 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "contracts")
 public class Contract extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
 
     @ManyToOne
     private JobType jobType;
@@ -26,10 +23,6 @@ public class Contract extends BaseEntity {
     public Contract(JobType jobType, Client client) {
         this.jobType = jobType;
         this.client = client;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public JobType getJobType() {

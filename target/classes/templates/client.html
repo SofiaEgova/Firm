@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Клиенты</title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div id="header">
@@ -16,7 +17,13 @@
     <li><a href="./worker">Сотрудники</a></li>
 </ul>
 <div id="main">
-
+    <form method="post">
+        <br>
+        <input type="text" name="name" placeholder="Напишите имя">
+        <input type="text" placeholder="Напишите телефон" name="phone">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <button type="submit">Отправить</button>
+    </form>
 </div>
 <div id="footer">
 

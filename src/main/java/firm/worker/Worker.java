@@ -7,9 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "workers")
 public class Worker extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
 
     private String name;
 
@@ -21,10 +18,6 @@ public class Worker extends BaseEntity {
     public Worker(String name, String post) {
         this.name = name;
         this.post = post;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public String getName() {

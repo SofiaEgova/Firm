@@ -7,9 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "clients")
 public class Client extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
 
     private String name;
 
@@ -21,10 +18,6 @@ public class Client extends BaseEntity {
     public Client(String name, Integer phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public String getName() {
@@ -48,7 +41,7 @@ public class Client extends BaseEntity {
         return "Client{" +
                 "id='" + id + '\'' +
                 "name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                "phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }

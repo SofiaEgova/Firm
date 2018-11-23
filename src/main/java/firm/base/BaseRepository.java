@@ -7,7 +7,7 @@ import java.io.IOException;
 @Component
 public interface BaseRepository<T> {
 
-    T findOne(Integer id)throws IOException;
+    //T findOne(Integer id)throws IOException;
 
     T save(T entity) throws IOException;
 }

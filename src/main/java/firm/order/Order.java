@@ -13,9 +13,6 @@ import java.util.Date;
 @Entity
 @Table(name = "orders")
 public class Order extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
 
     @OneToOne
     private Contract contract;
@@ -40,10 +37,6 @@ public class Order extends BaseEntity {
         this.worker = worker;
         this.area = area;
         this.date = date;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public Contract getContract() {
