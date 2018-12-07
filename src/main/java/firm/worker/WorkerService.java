@@ -9,9 +9,9 @@ import java.io.IOException;
 
 @Service
 public class WorkerService {
-    private final BaseRepository workerRepository;
+    private final BaseRepository<Worker> workerRepository;
 
-    public WorkerService(BaseRepository workerRepository) {
+    public WorkerService(BaseRepository<Worker> workerRepository) {
         this.workerRepository = workerRepository;
     }
 

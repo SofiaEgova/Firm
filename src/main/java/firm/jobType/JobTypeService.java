@@ -9,9 +9,9 @@ import java.io.IOException;
 
 @Service
 public class JobTypeService {
-    private final BaseRepository jobTypeRepository;
+    private final BaseRepository<JobType> jobTypeRepository;
 
-    public JobTypeService(BaseRepository jobTypeRepository) {
+    public JobTypeService(BaseRepository<JobType> jobTypeRepository) {
         this.jobTypeRepository = jobTypeRepository;
     }
 

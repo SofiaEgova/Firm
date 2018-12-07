@@ -10,9 +10,9 @@ import java.io.IOException;
 
 @Service
 public class OrderService {
-    private final BaseRepository orderRepository;
+    private final BaseRepository<Order> orderRepository;
 
-    public OrderService(BaseRepository orderRepository) {
+    public OrderService(BaseRepository<Order> orderRepository) {
         this.orderRepository = orderRepository;
     }
 

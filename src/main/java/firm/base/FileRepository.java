@@ -33,6 +33,10 @@ public class FileRepository<T extends BaseEntity> implements BaseRepository<T> {
                 .orElse(null);
     }
 
+    public List<T> findAll()throws IOException {
+        return getEntities();
+    }
+
     public T save(T entity) throws IOException {
         if (entity.getId() != null) {
             return update(entity);

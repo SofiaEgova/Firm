@@ -3,11 +3,12 @@ package firm.base;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.List;
 
 @Component
 public interface BaseRepository<T> {
 
-    //T findOne(Integer id)throws IOException;
+    List<T> findAll()throws IOException;
 
     T save(T entity) throws IOException;
 }

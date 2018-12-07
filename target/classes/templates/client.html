@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Клиенты</title>
-    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../../webapp/resources/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
 <div id="header">
@@ -24,9 +25,9 @@
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         <button type="submit">Отправить</button>
     </form>
+<p th:text="'!!' + ${clients}"/>
 </div>
 <div id="footer">
-
 </div>
 </body>
 </html>
