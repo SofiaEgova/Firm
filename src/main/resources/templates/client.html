@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Клиенты</title>
@@ -30,19 +29,53 @@
 
 
 <script type="text/javascript">
-    function show(clients) {
+    // function show(clients) {
+    //     $.ajax({
+    //         data: clients,
+    //         success: function (data) {
+    //             $("#clientsList").text(data);
+    //         }
+    //     });
+    // }
+    // $(document).ready(function () {
+    //     show(this.clients);
+    // });
+
+    function show() {
         $.ajax({
-            data: clients,
+            type: "GET",
+            url : "/getClients",
+            contentType: "application/json",
+
+            // dataType: 'json',
             success: function (data) {
-                $("#clientsList").html(data);
+                for(var i in data) {
+                    $("#clientsList").append('<tr><td width="40%">' + data[i].name + '</td><td width="60%">' +
+                        data[i].phoneNumber + '</td></tr>');
+                }
             }
         });
     }
     $(document).ready(function () {
-        show(this.clients);
+         show();
     });
+
 </script>
 
+<script type="text/javascript">
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function checkNumeric(element) {
+        if (isNumeric(element.value)) {
+            element.style.color = 'green';
+        } else {
+            element.style.color = 'red';
+        }
+    }
+</script>
 
 <nav class="header header-light bg-light" style="background-color:#EFEFF4">
     <a class="header-brand" href="./index">Строительная компания</a>
@@ -62,17 +95,19 @@
     <br>
     <form method="post">
         <div class="form-group">
-            <input type="text" name="name" placeholder="Напишите имя">
-            <input type="text" placeholder="Напишите телефон" name="phone">
+            <input type="text" name="name" placeholder="Напишите имя"/>
+            <input id="number" type="text" placeholder="Напишите телефон" name="phone" onkeyup="checkNumeric(this)"/>
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-            <button type="submit" class="btn btn-primary" onClick="show(this.clients)">Отправить</button>
+            <button type="submit" class="btn btn-primary" onClick="show()">Отправить</button>
         </div>
     </form>
 </div>
 
-<div id="clientsList">
-    <p th:text="${clients}"/>
-</div>
+<table id="clientsList" width="100%" border="1">
+    <!--<p th:text="hello"/>${clients}-->
+    <th >Имя</th>
+    <th width="60%">Телефон</th>
+</table>
 
 </body>
 </html>
